@@ -1,0 +1,22 @@
+<div>
+    <nav id="navbar" class="clearfix" ng-if="!state.hasLogin">
+            <!--<div class="logo index">&nbsp;</div>-->
+
+            <div class="action">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+            </div>
+    </nav>
+
+    <nav id="navbar" class="clearfix" ng-if="state.hasLogin">
+
+        <!--<div class="logo index">&nbsp;</div>-->
+
+        <div class="action">
+            <a href="#">退出</a>
+        </div>
+    </nav>
+
+</div>
+
+

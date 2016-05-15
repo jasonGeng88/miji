@@ -1,0 +1,62 @@
+//font-size
+$fs-1:28px;
+$fs-2:20px;
+$fs-3:18px;
+$fs-4:16px;
+$fs-5:14px;
+$fs-6:12px;
+
+//grayscale
+$c-g-1:#333;
+$c-g-2:#666;
+$c-g-3:#aaa;
+$c-g-4:#ddd;
+$c-g-5:#eee;
+$c-g-6:#fafafa;
+$c-g-7:#fff;
+
+//color
+$c-mint:#3CC8B4;
+$c-natsu:#32AB97;
+$c-green:#32AF96;
+$c-melon:#FF7F79;
+$c-sora:#5DC4F3;
+$c-lemon:#FDDC4E;
+$c-cream:#FFFBE9;
+
+
+//mixins
+@mixin circle($d){
+	display: block;
+	width: $d;
+	height: $d;
+	border-radius: $d/2;
+}
+@mixin square($a){
+	display: block;
+	width: $a;
+	height: $a;
+}
+
+
+/* Include this file in your html if you are using the CSP mode. */
+
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}

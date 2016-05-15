@@ -1,0 +1,32 @@
+.view-loading {
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+    .loading-container {
+        width: 80px;
+        margin: 200px auto 0;
+    }
+    .loading-1,
+    .loading-2,
+    .loading-3 {
+        width: 20px;
+        height: 20px;
+        background: #3cc8b4;
+        animation: pulse .99s linear infinite;
+        float: left;
+        border-radius: 10px;
+    }
+    .loading-2 {
+        animation-delay: 0.33s;
+        margin: 0 10px;
+    }
+    .loading-3 {
+        animation-delay: 0.66s;
+    }
+}

@@ -1,0 +1,805 @@
+@import "../../utils/normalize";
+@import "../../utils/config";
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    z-index: 0;
+    box-sizing: border-box;
+    font-family: "Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif;
+   /* line-height: 1.5;*/
+}
+
+
+a:disabled,
+button:disabled,
+input:disabled {
+    cursor: no-drop;
+}
+
+//meiqia
+// #MEIQIA-BTN{
+//     width: 20px !important;
+// }
+body {
+    background: $c-g-6; line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    font-weight: normal;
+    margin: 0;
+    color: $c-g-1;
+}
+
+h1 {
+    font-size: $fs-1;
+}
+
+h2 {
+    font-size: $fs-2;
+}
+
+h3 {
+    font-size: $fs-3;
+}
+
+h4 {
+    font-size: $fs-4;
+}
+
+h5 {
+    font-size: $fs-5;
+}
+
+h6 {
+    font-size: $fs-6;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s ease;
+    &:hover {
+        color: $c-mint;
+    }
+}
+
+span.clear {
+    clear: both;
+    display: block;
+    line-height: 1;
+    height: 1px;
+    font-size: 1px;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+//input
+//b => box
+.input-b {
+    display: block;
+    width: 430px;
+    height: 32px;
+    margin: 3px 0;
+    border: 1px solid $c-g-4;
+    border-radius: 2px;
+    background: $c-g-6;
+    font-size: $fs-5;
+    color: $c-g-1;
+    text-indent: 0.5em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.input-b:disabled {
+    background: $c-g-5;
+    color: $c-g-3;
+}
+
+//ul => underline
+.input-ul {
+    display: block;
+    margin: 15px 0;
+    font-size: $fs-5;
+    color: $c-g-2;
+    input {
+        width: 240px;
+        border: none;
+        border-bottom: 1px solid $c-g-3;
+        margin-left: 1rem;
+    }
+}
+
+//demo
+
+/*
+<label class="input-ul">
+    其他
+    <input type="text">
+</label>
+*/
+
+//f => float
+.input-f:before,
+.input-f:after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    bottom: 0;
+    left: 0;
+    transition: all 1s;}
+
+.input-f::after{
+    background-color: #3CC8B4;
+    transform:scaleX(0);
+}
+.isactive::after{
+    transform:scaleX(1);
+}
+.isactive{
+    label{
+        color: #3CC8B4 !important;
+        font-size: 12px !important;
+        transform: translateY(0) !important;
+        top:-45px !important;
+    }
+}
+.iscomplete{
+    label{
+        color: #aaa !important;
+        font-size: 12px !important;
+        transform: translateY(0) !important;
+        top:-45px !important;
+    }
+}
+.input-f {
+    position: relative;
+    display: block;
+    height: 30px;
+    margin: 40px 0;
+    top: -10px;
+    width: 240px;
+    input {
+        position: relative;
+        background: transparent;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        color: #333;
+    }
+    label {
+        display: block;
+        position: relative;
+        top: -52px;
+        font-size: 16px;
+        transform: translateY(25px);
+        color: #aaa;
+        transition: all 0.5s;
+        cursor:text;
+    }
+    // input.dirty{
+    //     cursor: not-allowed;
+    //     color: $c-g-3;
+    // }
+    & input:disabled{
+        cursor: no-drop;
+    }
+    input.dirty + label{color: #aaa;
+        font-size: 12px !important;
+        transform: translateY(0) !important;
+        top:-45px !important;}
+    span.error {
+        display: block;
+        width: 240px;
+        height: 15px;
+        margin-top: 10px;
+        opacity: 1;
+        cursor: default;
+        color: $c-melon;
+        font-size: $fs-6;
+    }
+}
+
+//demo
+
+/*
+<div class="input-f">
+    <input type="text" id="name" required="required" pattern=".{1,}">
+    <label for="name">姓名</label>
+    <span>error</span>
+</div>
+*/
+
+//t => textarea
+.input-t {
+    display: block;
+    width: 430px;
+    height: 180px;
+    resize: none;
+    margin: 3px 0;
+    padding: 1em;
+    border: 1px solid $c-g-4;
+    border-radius: 2px;
+    background: $c-g-6;
+    font-size: $fs-5;
+    color: $c-g-1;
+    -webkit-appearance: none;
+}
+
+//u => upload
+.input-u {
+    display: block;
+    width: 380px;
+    height: 180px;
+    border: 1px solid $c-g-4;
+    border-radius: 2px;
+    background: $c-g-6;
+    margin: 0;
+    input {
+        display: none;
+    }
+}
+
+//Selector
+select.ng-valid {
+    background: $c-g-6 image-url("selector_icon.png") no-repeat 95% 50%;
+}
+
+//demo
+
+/*
+<label class="input-f" for="file">
+    <input type="file" id="file">
+</label>
+*/
+
+//checkbox&radio
+// .checkbox,
+// .radio {
+//     display: inline-block;
+//     width: auto;
+//     margin: 8px 0;
+//     font-size: $fs-5 !important;
+//     color: $c-g-2;
+//     cursor: pointer;
+//     white-space: nowrap;
+//     input[type="checkbox"],
+//     input[type="radio"] {
+//         display: none;
+//     }
+//     i {
+//         font-size: $fs-2;
+//         width: 1em;
+//         text-align: center;
+//         position: relative;
+//         top: 3px;
+//         margin-right: 5px;
+//     }
+//     i.checked {
+//         display: none;
+//         color: $c-mint;
+//     }
+//     i.unchecked {
+//         display: inline-block;
+//         color: $c-g-3;
+//     }
+//     input[type="checkbox"]:checked + .checked,
+//     input[type="radio"]:checked + .checked {
+//         display: inline-block;
+//     }
+//     input[type="checkbox"]:checked ~ i.unchecked,
+//     input[type="radio"]:checked ~ i.unchecked {
+//         display: none;
+//     }
+// }
+//demo
+
+/*
+<label class="checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check-square-o checked"></i>
+    <i class="fa fa-square-o unchecked"></i>
+    checkbox1
+</label>
+<label class="checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check-square checked"></i>
+    <i class="fa fa-square-o unchecked"></i>
+    checkbox2
+</label>
+<label class="radio">
+    <input type="radio" name="test">
+    <i class="fa fa-dot-circle-o checked"></i>
+    <i class="fa fa-circle-o unchecked"></i>
+    radio test
+</label>
+*/
+
+//button
+.btn-posi,
+.btn-posi-g,
+.btn-nega,
+.btn-nega-g {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    font-size: $fs-5;
+    text-align: center;
+}
+
+.btn-posi {
+    color: $c-g-7;
+    background: $c-mint;
+    border-radius: 2px;
+    border: none;
+    transition: all 0.5s ease;
+    &:hover {
+        background: $c-natsu;
+    }
+}
+
+.btn-posi-g,
+.btn-posi:disabled {
+    color: $c-g-7;
+    background: $c-g-4;
+    border-radius: 2px;
+    border: none;
+}
+
+.btn-nega {
+    color: $c-mint;
+    background: $c-g-7;
+    border: 1px solid $c-mint;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    &:hover {
+        color: $c-natsu;
+        border: 1px solid $c-natsu;
+    }
+}
+
+.btn-nega-g,
+.btn-nega:disabled {
+    color: $c-g-3;
+    background: $c-g-7;
+    border: 1px solid $c-g-4;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    &:hover {
+        color: $c-g-2;
+        border: 1px solid $c-g-3;
+    }
+}
+
+.btn-upload-avatar {
+    height: 28px
+}
+
+//project status
+.project-status {
+    display: block;
+    &.mint {
+        color: $c-mint;
+    }
+    &.gray {
+        color: $c-g-3;
+    }
+    i {
+        margin-right: 10px;
+    }
+}
+
+//list-tab
+.list-tab {
+    display: inline-block;
+    width: 200px;
+    list-style: none;
+    border-radius: 2px;
+    border: 1px solid $c-g-5;
+    box-shadow: 0 2px 2px $c-g-5;
+    font-size: $fs-4;
+    color: $c-g-3;
+    vertical-align: top;
+    background: #fff;
+    li {
+        display: block;
+        height: 60px;
+        border-top: 1px solid $c-g-5;
+        padding: 20px;
+        cursor: pointer;
+        &:nth-child(1) {
+            border: none;
+        }
+        a {
+            font-size: $fs-4;
+            color: $c-g-3;
+        }
+        .num {
+            height: 20px;
+            border-radius: 10px;
+            background: $c-g-3;
+            vertical-align: middle;
+            float: right;
+            color: $c-g-7;
+            font-size: $fs-6;
+            text-align: center;
+            line-height: 20px;
+            min-width: 24px;
+            padding: 0 4px;
+        }
+    }
+
+    li.selected {
+        color: $c-mint;
+        a {
+            color: $c-mint;
+        }
+        .num {
+            background: $c-mint;
+        }
+    }
+
+    &.sel-1 {
+        li:nth-child(1) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-2 {
+        li:nth-child(2) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-3 {
+        li:nth-child(3) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-4 {
+        li:nth-child(4) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-5 {
+        li:nth-child(5) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-5 {
+        li:nth-child(5) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-6 {
+        li:nth-child(6) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+    &.sel-7 {
+        li:nth-child(7) {
+            color: $c-mint;
+            a {
+                color: $c-mint;
+            }
+            .num {
+                background: $c-mint;
+            }
+        }
+    }
+}
+
+//list-filter
+.list-filter {
+    display: inline-block;
+    width: 200px;
+    list-style: none;
+    box-shadow: 0 2px 2px $c-g-5;
+    vertical-align: top;
+    &.filter-0 {
+        li:nth-child(1) {
+            color: $c-mint;
+        }
+    }
+    &.filter-1 {
+        li:nth-child(2) {
+            color: $c-mint;
+        }
+    }
+    &.filter-2 {
+        li:nth-child(3) {
+            color: $c-mint;
+        }
+    }
+    &.filter-3 {
+        li:nth-child(4) {
+            color: $c-mint;
+        }
+    }
+    &.filter-4 {
+        li:nth-child(5) {
+            color: $c-mint;
+        }
+    }
+    &.filter-5 {
+        li:nth-child(6) {
+            color: $c-mint;
+        }
+    }
+    &.filter-6 {
+        li:nth-child(7) {
+            color: $c-mint;
+        }
+    }
+    &.filter-7 {
+        li:nth-child(8) {
+            color: $c-mint;
+        }
+    }
+    li {
+        display: block;
+        width: 200px;
+
+        line-height: 60px;
+        border: 1px solid $c-g-5;
+        border-top: none;
+        border-collapse: collapse;
+        border-radius: 2px;
+        cursor: pointer;
+        background: $c-g-7;
+        font-size: $fs-4;
+        color: $c-g-3;
+        transition: all 0.5s ease;
+        &:nth-child(1) {
+            border-top: 1px solid $c-g-5;
+        }
+        &:hover {
+            color: $c-g-2;
+        }
+        &.sel {
+            color: $c-mint;
+        }
+        i {
+            @include square(16px);
+            display: inline-block;
+            margin: 17px 10px 20px 20px;
+        }
+        span.text {
+            display: inline-block;
+            width: 80px;
+            //height: 16px;
+        }
+        span.num {
+            display: inline-block;
+            width: 40px;
+            height: 16px;
+            text-align: right;
+        }
+
+
+    }
+}
+
+.list-filter2 {
+    display: inline-block;
+    width: 200px;
+    list-style: none;
+    box-shadow: 0 2px 2px $c-g-5;
+    vertical-align: top;
+
+    border: 1px solid $c-g-5;
+
+    li {
+        display: block;
+
+        border-bottom: 1px solid $c-g-5;
+        &:last-child{
+            border-bottom:none;
+        }
+
+        border-radius: 2px;
+        cursor: pointer;
+        background: $c-g-7;
+        font-size: $fs-4;
+        color: $c-g-3;
+        transition: all 0.5s ease;
+
+
+
+
+
+    }
+
+
+
+    .filter-main{
+        padding:20px;height:60px;
+        &:hover {
+            color: $c-g-2;
+        }
+        i {
+            @include square(16px);
+            display: inline-block;
+            margin-right: 10px;
+        }
+        span.text {
+            display: inline-block;
+            width: 80px;
+            //height: 16px;
+        }
+        span.num {
+            float:right;
+            width: 40px;
+            height: 16px;
+            text-align: right;
+        }
+    }
+    .sub-filter{
+        display:none;
+        border-top: 1px solid $c-g-5;
+        padding:10px 0 10px 0;
+        line-height: 40px;font-size:14px;
+        div {
+            padding: 0 20px 0 47px;
+            line-height:40px;
+            &:hover {
+                color: $c-g-2;
+            }
+
+        }
+
+        .sub-filter-num {
+            float:right;
+        }
+    }
+
+
+    li.active {
+
+        .sub-filter {
+            display:block;
+        }
+        .filter-main{
+            color: $c-mint; background: #FAFAFA;
+        }
+        .sub-filter div.selected{
+            color: $c-mint; background: #FAFAFA;
+        }
+    }
+}
+
+
+
+
+//.bread end
+.butter {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+
+.link-color {
+    color: #3CC8B4 !important;
+}
+
+.link-cursor {
+    cursor: pointer !important;
+}
+
+.mt100 {
+    margin-top: 100px !important;
+}
+
+.mt200 {
+    margin-top: 100px !important;
+}
+
+.ft-12 {
+    font-size: 12px !important;
+}
+
+.ft-14 {
+    font-size: 14px !important;
+}
+
+.ft-16 {
+    font-size: 16px !important;
+}
+
+
+
+.pingxx-tip{
+    display: inline-block;
+    color: #aaa;
+    margin-left: 20px;
+    font-size: 14px;
+
+    .pxx-logo{
+        width: 62.4px;
+        height: 8.4px;
+        margin: 0 5px;
+
+
+        display: inline-block;
+
+        vertical-align: middle;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAOCAYAAADDsVnmAAAAAXNSR0IArs4c6QAAAL9JREFUWAntVe0KgDAIXNH7v3IfPw7CMKeEHHGDGDM9b97cljHGfn5fjMWAANezG/f0sgvXI+btz/P37K84qxclO0cFtpOGPYlZZjgB2bhq3ihfFTfLv8VfHdRS5noSCVSvXUukBGopcz3J9QZFd3odnStydp/2DYvivP+f4KiDuA7Rg83VQRhWcdj/Mkf7m+0E1AP+ES78Pb9XHHUQykc6SyBSYUBLAqESpPP9DSKlmKaFOz0dyBigDmJU5cbpACOSEiMvyf8jAAAAAElFTkSuQmCC") left center no-repeat;
+        background-size: cover;
+
+    }
+
+}
+.pingxx-tip-ml0{
+    margin-left: 0;
+}
+
+
+.list-empty:empty {
+    height: 360px;
+    background: image-url('project_empty.png') no-repeat 50% 50%;
+    border: 1px solid $c-g-5;
+    box-shadow: 0 2px 2px $c-g-5;
+    border-radius: 2px;
+}

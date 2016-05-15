@@ -1,0 +1,21 @@
+@import "../../utils/config";
+.view-404 {
+	height:100px;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	text-align: center;
+	display: table;
+    margin: 0 auto;
+	h1{
+		font-size: 50px;
+		font-weight: bold;
+	}
+	p{
+		padding: 15px 0px;
+		color: $c-g-3;
+		font-size: $fs-3;
+	}
+	img{
+		margin-top: 40px;
+	}
+}

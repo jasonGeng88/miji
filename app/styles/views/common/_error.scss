@@ -1,0 +1,8 @@
+@import "../../utils/config";
+.view-error {
+    padding-top: 150px;
+    p{
+        font-size: $fs-2;
+        text-align: center;
+    }
+}
